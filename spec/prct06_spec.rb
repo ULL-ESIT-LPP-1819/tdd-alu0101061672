@@ -25,5 +25,13 @@ RSpec.describe Prct06 do
 		expect(alimentosEnvasados.sal).to eq(0.02)
 		expect(alimentosEnvasados.vitaminas).to eq(3)
 		expect(alimentosEnvasados.minerales).to eq(6)
+
+	end
+
+	it "Factor de conversión funcionando correctamente" do 
+		
+		Etiqueta.factor_conversionKJ
+		Etiqueta.factor_conversionKcal
+
 	end
 end
