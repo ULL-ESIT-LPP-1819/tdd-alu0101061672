@@ -9,8 +9,9 @@ RSpec.describe Prct06 do
 end
 
 RSpec.describe Prct06 do
+	let(:alimentosEnvasados){Etiqueta.new('Chocolate', 29, 15.1, 8.1, 0.7, 47, 50.1, 0, 3.1, 5.9, 4.2, 0.02, 3, 6)}
 	it "Inicialización realizada correctamente" do
-		alimentosEnvasados = Etiqueta.new('Chocolate', 29, 15.1, 8.1, 0.7, 47, 50.1, 0, 3.1, 5.9, 4.2, 0.02, 3, 6)
+#alimentosEnvasados = Etiqueta.new('Chocolate', 29, 15.1, 8.1, 0.7, 47, 50.1, 0, 3.1, 5.9, 4.2, 0.02, 3, 6)
 		expect(alimentosEnvasados.nombreEtiqueta).to eq("Chocolate")	
 		expect(alimentosEnvasados.grasas).to eq(29)
 		expect(alimentosEnvasados.grasasSaturadas).to eq(15.1)
@@ -30,8 +31,8 @@ RSpec.describe Prct06 do
 
 	it "Factor de conversión funcionando correctamente" do 
 		
-		Etiqueta.factor_conversionKJ
-		Etiqueta.factor_conversionKcal
-
+		alimentosEnvasados.factor_conversionKJ
+		alimentosEnvasados.factor_conversionKcal
+		
 	end
 end
