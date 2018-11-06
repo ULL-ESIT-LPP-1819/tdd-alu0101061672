@@ -50,5 +50,24 @@ RSpec.describe Prct06 do
 		expect(alimentosEnvasados.to_s).to eq   "(    Por 100g o 100ml de producto   IR(por 100g 0 100ml de producto)   Por porción de X g   IR(por porción de X g de producto)\nValor energético(kj/kcal)   #{alimentosEnvasados.factor_conversionKcal}   #{alimentosEnvasados.ir_valorEnergetico}   #{'-'}   #{'-'}\nGrasas de las cuales:   #{alimentosEnvasados.grasas}   #{alimentosEnvasados.ir_grasas}   #{'-'}   #{'-'}\nSaturadas   #{alimentosEnvasados.grasasSaturadas}   #{alimentosEnvasados.ir_grasasSaturadas}   #{'-'}   #{'-'}\nMonoinsaturadas   #{alimentosEnvasados.grasasMonoinsaturadas}   #{'-'}   #{'-'}   #{'-'}\nPoliinsaturadas   #{alimentosEnvasados.grasasPoliinsaturadas}   #{'-'}   #{'-'}   #{'-'}\nHidratos de carbono de los cuales:   #{alimentosEnvasados.hidratosCarbono}   #{alimentosEnvasados.ir_hidratosCarbono}   #{'-'}   #{'-'}\nAzucares   #{alimentosEnvasados.azucares}   #{alimentosEnvasados.ir_azucares}   #{'-'}   #{'-'}\nPolialcoholes   #{alimentosEnvasados.polialcoholes}   #{'-'}   #{'-'}   #{'-'}\nAlmidón   #{alimentosEnvasados.almidon}   #{'-'}   #{'-'}   #{'-'}\nFibra alimentaria    #{alimentosEnvasados.fibraAlimentaria}   #{'-'}   #{'-'}   #{'-'}\nProteínas   #{alimentosEnvasados.proteinas}   #{alimentosEnvasados.ir_proteinas}   #{'-'}   #{'-'}\nSal   #{alimentosEnvasados.sal}   #{alimentosEnvasados.ir_sal}   #{'-'}   #{'-'}\nVitamina/mineral   #{alimentosEnvasados.vitaminas}   #{'-'}   #{'-'}   #{'-'}\n)"
 	
 	end
+	
+	it "Porciones realizadas con éxito" do
+		
+		expect(alimentosEnvasados.por_porcion_valorEnergetico).to eq(226.41)
+		expect(alimentosEnvasados.por_porcion_grasas).to eq(7)
+		expect(alimentosEnvasados.por_porcion_grasasSaturadas).to eq(3.78)
+		expect(alimentosEnvasados.por_porcion_grasasMonoinsaturadas).to eq(2.03)
+		expect(alimentosEnvasados.por_porcion_grasasPoliinsaturadas).to eq(0.18)
+		expect(alimentosEnvasados.por_porcion_hidratosCarbono).to eq(11)
+		expect(alimentosEnvasados.por_porcion_azucares).to eq(12.53)
+		expect(alimentosEnvasados.por_porcion_polialcoholes).to eq(0)
+		expect(alimentosEnvasados.por_porcion_almidon).to eq(0.78)
+		expect(alimentosEnvasados.por_porcion_fibraAlimentaria).to eq(1.48)
+		expect(alimentosEnvasados.por_porcion_proteinas).to eq(1.05)
+		expect(alimentosEnvasados.por_porcion_sal).to eq(0.01)
+		expect(alimentosEnvasados.por_porcion_vitaminas).to eq(0)
+
+
+	end
 
 end

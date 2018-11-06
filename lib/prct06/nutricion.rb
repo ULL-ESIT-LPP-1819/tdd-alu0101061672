@@ -80,5 +80,78 @@ class Etiqueta
 		
 		"(    Por 100g o 100ml de producto   IR(por 100g 0 100ml de producto)   Por porción de X g   IR(por porción de X g de producto)\nValor energético(kj/kcal)   #{factor_conversionKcal}   #{ir_valorEnergetico}   #{'-'}   #{'-'}\nGrasas de las cuales:   #{grasas}   #{ir_grasas}   #{'-'}   #{'-'}\nSaturadas   #{grasasSaturadas}   #{ir_grasasSaturadas}   #{'-'}   #{'-'}\nMonoinsaturadas   #{grasasMonoinsaturadas}   #{'-'}   #{'-'}   #{'-'}\nPoliinsaturadas   #{grasasPoliinsaturadas}   #{'-'}   #{'-'}   #{'-'}\nHidratos de carbono de los cuales:   #{hidratosCarbono}   #{ir_hidratosCarbono}   #{'-'}   #{'-'}\nAzucares   #{azucares}   #{ir_azucares}   #{'-'}   #{'-'}\nPolialcoholes   #{polialcoholes}   #{'-'}   #{'-'}   #{'-'}\nAlmidón   #{almidon}   #{'-'}   #{'-'}   #{'-'}\nFibra alimentaria    #{fibraAlimentaria}   #{'-'}   #{'-'}   #{'-'}\nProteínas   #{proteinas}   #{ir_proteinas}   #{'-'}   #{'-'}\nSal   #{sal}   #{ir_sal}   #{'-'}   #{'-'}\nVitamina/mineral   #{vitaminas}   #{'-'}   #{'-'}   #{'-'}\n)"
 	end
+	
+	def por_porcion_valorEnergetico
+		porcion = (factor_conversionKcal.to_f * 25)/100
+		porcion.round(2)	
+	end
+
+	def por_porcion_grasas
+		porcion = (grasas * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_grasasSaturadas
+		porcion = (grasasSaturadas * 25)/100
+                porcion.round(2)
+        end
+
+ 	def por_porcion_grasasMonoinsaturadas
+  		porcion = (grasasMonoinsaturadas * 25)/100
+                porcion.round(2) 
+        end
+	
+	def por_porcion_grasasPoliinsaturadas
+		porcion = (grasasPoliinsaturadas * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_hidratosCarbono
+		porcion = (hidratosCarbono * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_azucares
+   		porcion = (azucares * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_polialcoholes
+		porcion = (polialcoholes * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_almidon
+		porcion = (almidon * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_fibraAlimentaria
+		porcion = (fibraAlimentaria * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_proteinas
+   		porcion = (proteinas * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_sal
+		porcion = (sal * 25)/100
+                porcion.round(2)
+        end
+
+	def por_porcion_vitaminas
+		porcion = (vitaminas * 25)/100
+                porcion.round(2)
+        end
+
+
+
+
+
+
+
+
 
 end
