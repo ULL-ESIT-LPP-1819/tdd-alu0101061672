@@ -46,6 +46,7 @@ RSpec.describe Prct06 do
 		expect(alimentosEnvasados.ir_azucares).to eq(0.56)
 		expect(alimentosEnvasados.ir_proteinas).to eq(0.08)
 		expect(alimentosEnvasados.ir_sal).to eq(0.00)
-
+			
+		expect(alimentosEnvasados.to_s).to eq("Etiqueta")
 	end
 end
