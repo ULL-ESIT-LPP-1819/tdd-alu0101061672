@@ -33,6 +33,6 @@ RSpec.describe Prct06 do
 		
 		alimentosEnvasados.factor_conversionKJ
 		alimentosEnvasados.factor_conversionKcal
-		expect(alimentosEnvasados.factor_conversionKJ).to eq(500)
+		expect(alimentosEnvasados.factor_conversionKJ).to eq(3779.8)
 	end
 end
