@@ -36,4 +36,16 @@ RSpec.describe Prct06 do
 		expect(alimentosEnvasados.factor_conversionKJ).to eq(3779.8)
 		expect(alimentosEnvasados.factor_conversionKcal).to eq(905.62)
 	end
+
+	it "Ingesta de Referencia -IR- funcionando correctamente" do
+		
+		alimentosEnvasados.ir_valorEnergetico
+		alimentosEnvasados.ir_grasas
+		alimentosEnvasados.ir_grasasSaturadas
+		alimentosEnvasados.ir_hidratosCarbono
+		alimentosEnvasados.ir_azucares
+		alimentosEnvasados.ir_proteinas
+		alimentosEnvasados.ir_sal
+
+	end
 end
