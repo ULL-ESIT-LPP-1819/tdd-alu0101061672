@@ -69,5 +69,16 @@ RSpec.describe Prct06 do
 
 
 	end
+	
+	it "IR con porciones" do
 
+		expect(alimentosEnvasados.ir_porcion_valorEnergetico).to eq(0.11)
+                expect(alimentosEnvasados.ir_porcion_grasas).to eq(0.1)
+                expect(alimentosEnvasados.ir_porcion_grasasSaturadas).to eq(0.19)
+		expect(alimentosEnvasados.ir_porcion_hidratosCarbono).to eq(0.04)
+                expect(alimentosEnvasados.ir_porcion_azucares).to eq(0.14)
+                expect(alimentosEnvasados.ir_porcion_proteinas).to eq(0.02)
+                expect(alimentosEnvasados.ir_porcion_sal).to eq(0.00)
+
+	end
 end
