@@ -39,13 +39,13 @@ RSpec.describe Prct06 do
 
 	it "Ingesta de Referencia -IR- funcionando correctamente" do
 		
-		alimentosEnvasados.ir_valorEnergetico
-		alimentosEnvasados.ir_grasas
-		alimentosEnvasados.ir_grasasSaturadas
-		alimentosEnvasados.ir_hidratosCarbono
-		alimentosEnvasados.ir_azucares
-		alimentosEnvasados.ir_proteinas
-		alimentosEnvasados.ir_sal
+		expect(alimentosEnvasados.ir_valorEnergetico).to eq(0.45)
+		expect(alimentosEnvasados.ir_grasas).to eq(0.41)
+		expect(alimentosEnvasados.ir_grasasSaturadas).to eq(0.76)
+		expect(alimentosEnvasados.ir_hidratosCarbono).to eq(0.18)
+		expect(alimentosEnvasados.ir_azucares).to eq(0.56)
+		expect(alimentosEnvasados.ir_proteinas).to eq(0.08)
+		expect(alimentosEnvasados.ir_sal).to eq(0.00)
 
 	end
 end
