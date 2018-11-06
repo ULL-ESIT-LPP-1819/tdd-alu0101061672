@@ -24,6 +24,21 @@ class Etiqueta
 	end
 
 	def factor_conversionKcal
+		
+		kcal = grasas.to_f * 9
+		kcal += grasasSaturadas.to_f * 9
+		kcal += grasasMonoinsaturadas.to_f * 9
+		kcal += grasasPoliinsaturadas.to_f * 9
+		kcal += hidratosCarbono.to_f * 4
+		kcal += azucares.to_f * 4
+		kcal += polialcoholes.to_f * 2.4
+		kcal += almidon.to_f * 4
+		kcal += fibraAlimentaria.to_f * 2
+		kcal += proteinas.to_f * 4
+		kcal += sal.to_f * 6
+		kcal.round(2)
+
+
 
 	end
 
