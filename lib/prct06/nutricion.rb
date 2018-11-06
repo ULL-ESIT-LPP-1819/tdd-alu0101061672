@@ -75,6 +75,10 @@ class Etiqueta
 		s = sal.to_f / 6
 		s.round(2)
 	end
-
+	
+	def to_s
+		
+		"(    Por 100g o 100ml de producto   IR(por 100g 0 100ml de producto)   Por porción de X g   IR(por porción de X g de producto)\nValor energético(kj/kcal)   #{factor_conversionKcal}   #{ir_valorEnergetico}   #{'-'}   #{'-'}\nGrasas de las cuales:   #{grasas}   #{ir_grasas}   #{'-'}   #{'-'}\nSaturadas   #{grasasSaturadas}   #{ir_grasasSaturadas}   #{'-'}   #{'-'}\nMonoinsaturadas   #{grasasMonoinsaturadas}   #{'-'}   #{'-'}   #{'-'}\nPoliinsaturadas   #{grasasPoliinsaturadas}   #{'-'}   #{'-'}   #{'-'}\nHidratos de carbono de los cuales:   #{hidratosCarbono}   #{ir_hidratosCarbono}   #{'-'}   #{'-'}\nAzucares   #{azucares}   #{ir_azucares}   #{'-'}   #{'-'}\nPolialcoholes   #{polialcoholes}   #{'-'}   #{'-'}   #{'-'}\nAlmidón   #{almidon}   #{'-'}   #{'-'}   #{'-'}\nFibra alimentaria    #{fibraAlimentaria}   #{'-'}   #{'-'}   #{'-'}\nProteínas   #{proteinas}   #{ir_proteinas}   #{'-'}   #{'-'}\nSal   #{sal}   #{ir_sal}   #{'-'}   #{'-'}\nVitamina/mineral   #{vitaminas}   #{'-'}   #{'-'}   #{'-'}\n)"
+	end
 
 end
