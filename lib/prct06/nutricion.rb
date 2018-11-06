@@ -39,7 +39,34 @@ class Etiqueta
 		kcal.round(2)
 
 
+	end
+	
+	def ir_valorEnergetico
+		ve = factor_conversionKcal.to_f / 2000	
+	end
 
+	def ir_grasas
+		gra = grasas.to_f / 70 
+	end
+
+	def ir_grasasSaturadas
+		grasat = grasasSaturadas.to_f / 20
+	end
+
+	def ir_hidratosCarbono
+		hc = hidratosCarbono.to_f / 260
+	end
+
+	def ir_azucares
+		az = azucares.to_f / 90
+	end
+
+	def ir_proteinas
+		pro = proteinas.to_f / 50
+	end
+
+	def ir_sal
+		s = sal.to_f / 6
 	end
 
 
