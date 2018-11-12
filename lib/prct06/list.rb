@@ -55,7 +55,7 @@ class List
 
 	def extract_begin
 
-		if @head == nil
+		if (@head == nil)
 			"No se puede extraer un nodo, la lista se encuentra vacía"
 		else
 
@@ -74,5 +74,25 @@ class List
 
 	end
 
+	def extract_end
+
+		if (@head == nil)
+			"No se puede extraer un nodo, la lista se encuentra vacía"
+		else
+
+			if @head == @tail
+
+				@head,@tail = nil
+
+			else
+
+				@tail = @tail[:prev]
+				@tail[:next] = nil
+				
+			end
+			@tail[:value]			
+
+		end
+	end
 
 end
