@@ -9,4 +9,13 @@ RSpec.describe List do
 		
 		@lista = List.new
 	end
+
+	it "Creado primer nodo correctamente" do 
+		
+	@lista.insert_begin(@et1)
+	expect(@lista.get_value).to eq(@et1)
+	expect(@lista.get_next).to eq("nil")
+
+
+	end
 end
