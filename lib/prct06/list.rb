@@ -52,4 +52,27 @@ class List
 	def get_prev
 		@head[:prev]
 	end
+
+	def extract_begin
+
+		if @head == nil
+			"No se puede extraer un nodo, la lista se encuentra vacía"
+		else
+
+			if @head == @tail
+
+				@head,@tail = nil
+
+			else
+
+				@head = @head[:next]
+				@head[:prev] = nil
+
+			end
+			@head[:value]
+		end
+
+	end
+
+
 end
