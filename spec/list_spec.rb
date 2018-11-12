@@ -1,4 +1,4 @@
-describe List do
+RSpec.describe List do
 	
 	before :each do
     		@et1 = Etiqueta.new('Chocolate', 29, 15.1, 8.1, 0.7, 47, 50.1, 0, 3.1, 5.9, 4.2, 0.02, 3, 6)	
