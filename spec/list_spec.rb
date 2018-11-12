@@ -18,4 +18,13 @@ RSpec.describe List do
 
 
 	end
+
+	it "Insertando nodo por el final correcto" do
+	
+	@lista.insert_end(@et1)
+	expect(@lista.get_next).to eq(nil)
+
+
+
+	end
 end
