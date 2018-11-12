@@ -48,4 +48,8 @@ class List
 		end
 
 	end
+
+	def get_prev
+		@head[:prev]
+	end
 end

@@ -21,9 +21,10 @@ RSpec.describe List do
 
 	it "Insertando nodo por el final correcto" do
 	
+	@lista.insert_end(@et2)
+	expect(@lista.get_prev).to eq(nil)
 	@lista.insert_end(@et1)
-	expect(@lista.get_next).to eq(nil)
-
+	expect(@lista.get_next).to eq(@lista.get_next)
 
 
 	end
