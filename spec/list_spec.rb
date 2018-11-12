@@ -14,7 +14,7 @@ RSpec.describe List do
 		
 	@lista.insert_begin(@et1)
 	expect(@lista.get_value).to eq(@et1)
-	expect(@lista.get_next).to eq("nil")
+	expect(@lista.get_next).to eq(nil)
 
 
 	end

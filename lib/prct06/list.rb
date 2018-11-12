@@ -23,4 +23,13 @@ class List
 		end
 
 	end
+
+	def get_value
+		@head[:value]
+	end
+
+	
+	def get_next
+		@head[:next]
+	end
 end
