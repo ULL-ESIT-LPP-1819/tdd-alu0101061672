@@ -7,5 +7,20 @@ class List
 		@head = nil
 		@tail = nil
 	end
+	
+	def insert_begin(value)
 
+		if (@head == nil)
+
+			@head = @Node.new(value,nil,nil)
+			@tail = @head
+
+		else
+
+			@head[:prev] = @Node.new(value,@head,nil)
+			@head = @head[:prev] 
+
+		end
+
+	end
 end
