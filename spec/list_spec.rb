@@ -28,4 +28,10 @@ RSpec.describe List do
 
 
 	end
+
+	it "Extrayendo nodo por el principio" do
+	
+	expect(@lista.extract_begin).to eq("No se puede extraer un nodo, la lista se encuentra vacía")	
+
+	end
 end
