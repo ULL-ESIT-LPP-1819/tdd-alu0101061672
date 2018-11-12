@@ -33,8 +33,18 @@ RSpec.describe List do
 	
 	expect(@lista.extract_begin).to eq("No se puede extraer un nodo, la lista se encuentra vacía")	
 	@lista.insert_begin(@et3)
-	@lista.insert_begin(@et3)
+	@lista.insert_begin(@et4)
 	expect(@lista.extract_begin()).to eq(@et3)	
+
+	end
+
+	it "Extrayendo nodo por el final" do
+	
+        expect(@lista.extract_end).to eq("No se puede extraer un nodo, la lista se encuentra vacía")
+        @lista.insert_begin(@et4)
+        @lista.insert_begin(@et5)
+        expect(@lista.extract_end()).to eq(@et5)
+	
 
 	end
 end
