@@ -32,4 +32,20 @@ class List
 	def get_next
 		@head[:next]
 	end
+
+	def insert_end(value)
+
+		if (@head == nil)
+
+			@head = @Node.new(value,nil,nil)
+			@tail = @head
+
+		else
+
+			@tail[:next] = @Node.new(value,nil,@tail)
+			@tail = @tail[:next]
+
+		end
+
+	end
 end
