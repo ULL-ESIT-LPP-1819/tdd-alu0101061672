@@ -50,7 +50,7 @@ RSpec.describe List do
 	
 	it "La lista está vacía" do
 	
-	expect(@lista.empty).to eq(nil)
+	expect(@lista.empty).to eq(true)
 
 	end 
 

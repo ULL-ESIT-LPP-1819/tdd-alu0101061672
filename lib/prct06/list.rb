@@ -94,5 +94,16 @@ class List
 
 		end
 	end
+	
+
+	def empty 
+	
+		if ((@head == nil)&&(@tail == nil))
+			return true
+		else 
+			return false
+		end
+
+	end
 
 end
