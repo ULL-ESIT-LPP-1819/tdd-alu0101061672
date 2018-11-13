@@ -3,7 +3,7 @@ class List
 	attr_accessor :node
 
 	def initialize
-		@Node = Struct.new(:value, :next, :prev)
+		@Node = Struct.new( :value, :next, :prev)
 		@head = nil
 		@tail = nil
 	end
@@ -58,18 +58,17 @@ class List
 		if (@head == nil)
 			"No se puede extraer un nodo, la lista se encuentra vacía"
 		else
+			valor = @head.value
 
 			if @head == @tail
-
 				@head,@tail = nil
 
 			else
-
 				@head = @head[:next]
 				@head[:prev] = nil
 
 			end
-			@head[:value]
+			valor
 		end
 
 	end
@@ -79,6 +78,7 @@ class List
 		if (@head == nil)
 			"No se puede extraer un nodo, la lista se encuentra vacía"
 		else
+			valor = @tail.value
 
 			if @head == @tail
 
@@ -90,7 +90,7 @@ class List
 				@tail[:next] = nil
 				
 			end
-			@tail[:value]			
+			valor			
 
 		end
 	end
@@ -98,12 +98,8 @@ class List
 
 	def empty 
 	
-		if ((@head == nil)&&(@tail == nil))
-			return true
-		else 
-			return false
-		end
-
+		return ((@head == nil)&&(@tail == nil))
+			
 	end
 
 end

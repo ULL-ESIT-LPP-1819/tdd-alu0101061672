@@ -1,10 +1,11 @@
+
 RSpec.describe List do
 	
 	before :each do
     		@et1 = Etiqueta.new('Chocolate', 29, 15.1, 8.1, 0.7, 47, 50.1, 0, 3.1, 5.9, 4.2, 0.02, 3, 6)	
 	        @et2 = Etiqueta.new('Nutela', 57.16 ,8.12 , 37.28, 6.72,14.8 ,3.97 ,0 ,0 ,10.3 ,17.64 , 0.2, 0,0 )
-                @et3 = Etiqueta.new('Chuleta', 12, 6.54, 6.07, 1.09, 0.8, 0, 0, 0, 0, 19.1, 0.3, 0.5, 0)
-		@et4 = Etiqueta.new('Aceite',92, 14, 69, 9.2, 0, 0, 0, 0, 2.9, 0, 0, 0,0)
+                @et3 = Etiqueta.new('Chuleta', 12, 6.54, 6.07, 1.09, 0.8, 0, 0, 0, 0, 19.1, 7, 0.5, 0)
+		@et4 = Etiqueta.new('Aceite',92, 14, 69, 9.2, 0, 0, 0, 0, 2.9, 0, 8, 0,0)
 		@et5 = Etiqueta.new('Colacao0%', 5.8, 3, 2, 0.8, 40, 5, 0,0, 22, 9.2, 0.04, 0,0)
 		
 		@lista = List.new
@@ -34,7 +35,7 @@ RSpec.describe List do
 	expect(@lista.extract_begin).to eq("No se puede extraer un nodo, la lista se encuentra vacía")	
 	@lista.insert_begin(@et3)
 	@lista.insert_begin(@et4)
-	expect(@lista.extract_begin).to eq(@et3)	
+	expect(@lista.extract_begin).to eq(@et4)	
 
 	end
 
@@ -43,7 +44,7 @@ RSpec.describe List do
         expect(@lista.extract_end).to eq("No se puede extraer un nodo, la lista se encuentra vacía")
         @lista.insert_end(@et5)
 	@lista.insert_end(@et1)
-        expect(@lista.extract_end).to eq(@et5)
+        expect(@lista.extract_end).to eq(@et1)
 	
 
 	end
@@ -56,13 +57,20 @@ RSpec.describe List do
 	
 	it "Etiquetas de información nutricional creado correctamente 5" do 
 	
+		
 	@lista.insert_end(@et1)
 	@lista.insert_end(@et2)
         @lista.insert_end(@et3)
         @lista.insert_end(@et4)
 	@lista.insert_end(@et5)
 	
-	expect(@lista.extract_begin.nombreEtiqueta).to eq("Nutela")
+	expect(@lista.extract_begin.sal).to eq(0.02)	
+	expect(@lista.extract_begin.sal).to eq(0.2)
+	expect(@lista.extract_begin.sal).to eq(7)
+	expect(@lista.extract_begin.sal).to eq(8)
+	expect(@lista.extract_begin.sal).to eq(0.04)
+	
+
 
 	end
 end
