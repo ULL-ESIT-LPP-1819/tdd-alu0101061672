@@ -19,39 +19,13 @@ RSpec.describe List do
 
 	end
 
-	it "Insertando nodo por el final correcto" do
-	
-	@lista.insert_end(@et2)
-	expect(@lista.get_prev).to eq(nil)
+	it "Insertando elemento por el final correctamente" do
+		
 	@lista.insert_end(@et1)
-	expect(@lista.get_next).to eq(@lista.get_next)
 
-
-	end
-
-	it "Extrayendo nodo por el principio" do
-	
-	expect(@lista.extract_begin).to eq("No se puede extraer un nodo, la lista se encuentra vacía")	
-	@lista.insert_begin(@et3)
-	@lista.insert_begin(@et4)
-	expect(@lista.extract_begin).to eq(@et3)	
-
-	end
-
-	it "Extrayendo nodo por el final" do
-	
-        expect(@lista.extract_end).to eq("No se puede extraer un nodo, la lista se encuentra vacía")
-        @lista.insert_end(@et5)
-	@lista.insert_end(@et1)
-        expect(@lista.extract_end).to eq(@et5)
-	
-
+	def get_next
+		@head[:next]
 	end
 	
-	it "La lista está vacía" do
-	
-	expect(@lista.empty).to eq(nil)
-
-	end 
-
+	end
 end
