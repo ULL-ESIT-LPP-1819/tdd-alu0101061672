@@ -1,4 +1,3 @@
-
 RSpec.describe List do
 	
 	before :each do
@@ -55,7 +54,7 @@ RSpec.describe List do
 
 	end 
 	
-	it "Etiquetas de información nutricional creado correctamente 5" do 
+	it "Etiquetas de información nutricional creado correctamente 5. Testeando la sal." do 
 	
 		
 	@lista.insert_end(@et1)
@@ -70,6 +69,30 @@ RSpec.describe List do
 	expect(@lista.extract_begin.sal).to eq(8)
 	expect(@lista.extract_begin.sal).to eq(0.04)
 	
+	@lista.insert_end(@et1)
+        @lista.insert_end(@et2)
+        @lista.insert_end(@et3)
+        @lista.insert_end(@et4)
+        @lista.insert_end(@et5)
+
+	sal_exceso = []
+	sal_bien = []
+		
+	while (@lista.empty == false) do
+
+		sal = @lista.extract_begin.sal
+
+		if (sal > 6)
+
+			sal_exceso.push(sal)
+		else
+			sal_bien.push(sal)
+		end
+
+	end	
+
+	expect(sal_exceso).to eq([7,8])
+	expect(sal_bien).to eq([0.02, 0.2, 0.04])	
 
 
 	end
