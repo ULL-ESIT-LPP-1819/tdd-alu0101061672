@@ -53,5 +53,16 @@ RSpec.describe List do
 	expect(@lista.empty).to eq(true)
 
 	end 
+	
+	it "Etiquetas de información nutricional creado correctamente 5" do 
+	
+	@lista.insert_end(@et1)
+	@lista.insert_end(@et2)
+        @lista.insert_end(@et3)
+        @lista.insert_end(@et4)
+	@lista.insert_end(@et5)
+	
+	expect(@lista.extract_begin.nombreEtiqueta).to eq("Nutela")
 
+	end
 end
