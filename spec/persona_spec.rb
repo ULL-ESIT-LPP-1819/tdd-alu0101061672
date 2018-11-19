@@ -20,7 +20,7 @@ RSpec.describe Persona do
 
 	it "Comprobando la etiqueta formateada" do
 
-		expect(@pe1.to_s).to eq("Nombre: Sonia, Apellidos: Díaz Santos, Edad: 22, Direccion: Candelaria, Telefono: 666666666")
+		expect(@pe1.to_s).to eq("Nombre: Sonia, Apellidos: Díaz Santos, Edad: 22, Sexo: 0, Direccion: Candelaria, Telefono: 666666666")
 	
 	end 
 
