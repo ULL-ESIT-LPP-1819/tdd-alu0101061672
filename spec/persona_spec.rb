@@ -65,6 +65,10 @@ RSpec.describe Persona do
 		expect(@pe1.is_a? Persona).to eq(true)
                 expect(@pa1.respond_to?('to_s')).to eq(true)
 
+		expect(@pa1.is_a? Object).to eq(true)
+		expect(@pe1.is_a? Object). to eq(true)
+		expect(@pa1.is_a? BasicObject).to eq(true)
+		expect(@pe1.is_a? BasicObject).to eq(true)
 
 	end
 
