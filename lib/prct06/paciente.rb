@@ -3,7 +3,7 @@ class DatosAntropometricos < Persona
         attr_accessor :peso, :talla, :edad, :sexo, :circunferenciaCintura, :circunferenciaCadera
 
         def initialize (nombre,apellidos, direccion,telefono,peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
-		#super(nombre,apellidos,edad,sexo,direccion,telefono)
+		super(nombre,apellidos,edad,sexo,direccion,telefono)
                 @peso, @talla, @circunferenciaCintura, @circunferenciaCadera = peso,talla, circunferenciaCintura, circunferenciaCadera
 
         end
