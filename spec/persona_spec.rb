@@ -48,6 +48,25 @@ RSpec.describe Persona do
 		expect(@pa1.to_s).to eq("Nombre: Sonia, Apellidos: Díaz Santos, Edad: 22, Sexo: 0, Direccion: Candelaria, Telefono: 666666666,70,1.6,22,0,81,90")
 
 	end
+	
+	it "Comprobando la clase, el tipo y si pertenece a la jerarquía de clases" do
+	
+		expect(@pa1.class).to eq(DatosAntropometricos)
+		expect(@pa1.class.superclass).to eq(Persona)
+		expect(@pa1.instance_of? DatosAntropometricos).to eq(true)
+		expect(@pa1.is_a? DatosAntropometricos).to eq(true)
+		expect(@pa1.respond_to?('to_s')).to eq(true)
+                expect(@pa1.respond_to?('IMC')).to eq(true)
+                expect(@pa1.respond_to?('RCC')).to eq(true)
+
+		expect(@pe1.class).to eq(Persona)
+		expect(@pe1.class.superclass).to eq(Object)
+		expect(@pe1.instance_of? Persona).to eq(true)
+		expect(@pe1.is_a? Persona).to eq(true)
+                expect(@pa1.respond_to?('to_s')).to eq(true)
+
+
+	end
 
 	it "Listas de individuos clasificados por IMC" do
 	
