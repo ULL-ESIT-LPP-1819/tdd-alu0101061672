@@ -4,9 +4,9 @@ class Persona
 
 	def initialize(nombre,apellidos,edad, sexo,direccion,telefono)
 		
-	@nombre,@apellidos = nombre,apellidos
-	@edad,@sexo, @direccion,@telefono = edad, sexo, direccion,telefono
-
+		@nombre,@apellidos = nombre,apellidos
+		@edad,@sexo, @direccion,@telefono = edad, sexo, direccion,telefono
+	
 	end
 
 	def to_s 

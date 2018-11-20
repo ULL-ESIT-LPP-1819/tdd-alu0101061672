@@ -9,7 +9,9 @@ class DatosAntropometricos < Persona
         end
 
         def to_s
-		"(#{@peso},#{@talla},#{@edad},#{@sexo},#{@circunferenciaCintura},#{@circunferenciaCadera})"
+		
+		super().to_s +
+		",#{@peso},#{@talla},#{@edad},#{@sexo},#{@circunferenciaCintura},#{@circunferenciaCadera}"
         end
 
         def IMC
@@ -17,22 +19,22 @@ class DatosAntropometricos < Persona
                 imc = (peso/(talla*talla)).round(2)
 
                 if imc < 18.5
-                        "(#{imc})" #"IMC = #{imc}; Clasificación de la OMS: Bajo peso\nDescripción popular: Delgado"
+                        imc #"IMC = #{imc}; Clasificación de la OMS: Bajo peso\nDescripción popular: Delgado"
 
                 elsif 18.5<=imc && imc<=24.9
-                        "(#{imc})"#"IMC = #{imc}; Clasificación de la OMS: Adecuado\nDescripción popular: Aceptable"
+                        imc#"IMC = #{imc}; Clasificación de la OMS: Adecuado\nDescripción popular: Aceptable"
 
                 elsif 25.0<=imc && imc<=29.9
-                        "(#{imc})"#"IMC = #{imc}; Clasificación de la OMS: Sobrepeso\nDescripción popular: Sobrepeso"
+                        imc#"IMC = #{imc}; Clasificación de la OMS: Sobrepeso\nDescripción popular: Sobrepeso"
 
                 elsif 30.0<=imc && imc<=34.9
-                        "(#{imc})"#"IMC = #{imc}; Clasificación de la OMS: Obesidad grado 1\nDescripción popular: Obesidad"
+                        imc#"IMC = #{imc}; Clasificación de la OMS: Obesidad grado 1\nDescripción popular: Obesidad"
 
                 elsif 35.0<=imc && imc<=39.9
-                        "(#{imc})"#"IMC = #{imc}; Clasificación de la OMS: Obesidad grado 2\nDescripción popular: Obesidad"
+                        imc #"IMC = #{imc}; Clasificación de la OMS: Obesidad grado 2\nDescripción popular: Obesidad"
 
                 elsif imc>=40
-                        "(#{imc})"#"IMC = #{imc}; Clasificación de la OMS: Obesidad grado 3\nDescripción popular: Obesidad"
+                        imc#"IMC = #{imc}; Clasificación de la OMS: Obesidad grado 3\nDescripción popular: Obesidad"
                 end
 
         end
