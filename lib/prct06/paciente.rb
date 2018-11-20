@@ -1,30 +1,15 @@
-class Persona
-
-        attr_accessor :nombre, :apellidos, :edad, :direccion, :telefono
-
-        def initialize(nombre,apellidos,edad,direccion,telefono)
-
-        @nombre,@apellidos = nombre,apellidos
-        @edad,@direccion,@telefono = edad,direccion,telefono
-
-        end
-
-
-
-end
-
 class DatosAntropometricos < Persona
 
         attr_accessor :peso, :talla, :edad, :sexo, :circunferenciaCintura, :circunferenciaCadera
 
-        def initialize (peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
-
-                @peso, @talla, @edad, @sexo, @circunferenciaCintura, @circunferenciaCadera = peso,talla, edad, sexo, circunferenciaCintura, circunferenciaCadera
+        def initialize (nombre,apellidos, direccion,telefono,peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
+		#super(nombre,apellidos,edad,sexo,direccion,telefono)
+                @peso, @talla, @circunferenciaCintura, @circunferenciaCadera = peso,talla, circunferenciaCintura, circunferenciaCadera
 
         end
 
         def to_s
-                "(#{@peso},#{@talla},#{@edad},#{@sexo},#{@circunferenciaCintura},#{@circunferenciaCadera})"
+		"(#{@peso},#{@talla},#{@edad},#{@sexo},#{@circunferenciaCintura},#{@circunferenciaCadera})"
         end
 
         def IMC
