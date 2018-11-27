@@ -96,4 +96,18 @@ RSpec.describe List do
 
 
 	end
+
+	
+describe "Enumerable" do
+
+	it "collect" do
+		@lista.insert_end(@et1)
+		@lista.insert_end(@et2)
+
+		expect(@lista.collect{"helloDarkness"}).to eq([helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness])
+
+	end
+
+
+end
 end
