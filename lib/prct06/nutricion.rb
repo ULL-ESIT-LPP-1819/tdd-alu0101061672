@@ -1,5 +1,7 @@
 class Etiqueta
-
+	
+	include Comparable
+	
 	attr_accessor  :nombreEtiqueta, :grasas, :grasasSaturadas, :grasasMonoinsaturadas, :grasasPoliinsaturadas, :hidratosCarbono, :azucares, :polialcoholes, :almidon, :fibraAlimentaria, :proteinas, :sal, :vitaminas, :minerales
 
 
@@ -187,10 +189,10 @@ class Etiqueta
         end
 
 
+	def <=>(other)	
 
+		return self.grasas <=> other.grasas 
 
-
-
-
+	end
 
 end
