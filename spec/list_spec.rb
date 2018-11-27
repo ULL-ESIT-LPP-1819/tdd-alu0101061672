@@ -104,7 +104,7 @@ describe "Enumerable" do
 		@lista.insert_end(@et1)
 		@lista.insert_end(@et2)
 
-		expect(@lista.collect{"helloDarkness"}).to eq([helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness,helloDarkness])
+		expect(@lista.collect{ "helloDarkness" }).to eq(["helloDarkness","helloDarkness"])
 
 	end
 

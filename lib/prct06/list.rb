@@ -1,4 +1,6 @@
 class List
+	
+	include Enumerable
 
 	attr_accessor :node
 
@@ -101,5 +103,16 @@ class List
 		return ((@head == nil)&&(@tail == nil))
 			
 	end
+
+	def each
+
+	    actual = @head
+       	    while actual != nil do
+             yield actual.value
+             actual = actual.next
+   	    end	
+
+	end		
+
 
 end
