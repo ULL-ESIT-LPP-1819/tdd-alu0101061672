@@ -128,6 +128,25 @@ describe "Comparable" do
                 expect(@et3.grasas == @et4.grasas).to eq(false)
 
         end
+	
+
+        it "Mayor o igual >= " do
+
+                expect(@et1.grasas == @et2.grasas).to eq(false)
+
+        end
+
+        it "Menor o igual <= " do
+
+                expect(@et1.grasas == @et2.grasas).to eq(false)
+
+        end
+
+        it "Between" do
+
+                expect(@et1.between?(@et2,@et3)).to eq(false)
+
+        end
 
 
 

@@ -126,33 +126,51 @@ RSpec.describe Persona do
 	
 describe "Comparable" do
 
-        it "Menor < (nombre)" do
+        it "Menor < (imc)" do
 
-                expect(@pe1.nombre < @pe2.nombre).to eq(false)
+                expect(@pa1.IMC < @pa2.IMC).to eq(false)
 
         end
 
-        it "Menor < (sexo)" do
+        it "Menor < (rcc)" do
 
-                expect(@pe1.sexo < @pe2.sexo).to eq(false)
+                expect(@pa1.RCC < @pa3.RCC).to eq(false)
 
         end
 
         it "Mayor > " do
 
-                expect(@pe1.nombre > @pe2.nombre).to eq(true)
+                expect(@pa1.IMC > @pa2.IMC).to eq(true)
 
         end
 
-        it "Igual == (nombre)" do
+        it "Igual == (imc)" do
 
-                expect(@pe1.nombre == @pe2.nombre).to eq(false)
+                expect(@pa1.IMC == @pa2.IMC).to eq(false)
 
         end
 
-        it "Igual == (sexo)" do
+        it "Igual == (rcc)" do
 
-                expect(@pe1.sexo == @pe2.sexo).to eq(true)
+                expect(@pa1.RCC == @pa2.RCC).to eq(false)
+
+        end
+
+        it "Mayor o igual >= " do
+
+                expect(@pa1.IMC == @pa2.IMC).to eq(false)
+
+        end
+
+        it "Menor o igual <= " do
+
+                expect(@pa1.IMC == @pa2.IMC).to eq(false)
+
+        end
+
+        it "Between" do
+
+                expect(@pa1.between?(@pa2,@pa3)).to eq(true)
 
         end
 

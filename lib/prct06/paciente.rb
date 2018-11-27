@@ -53,27 +53,27 @@ class DatosAntropometricos < Persona
                 if sexo == 1 #hombres
 
                         if 0.83<=rcc && rcc<0.88
-                        "(#{rcc})" #"RCC = #{rcc};  Riesgo: Bajo"
+                        rcc #"RCC = #{rcc};  Riesgo: Bajo"
 
                         elsif 0.88<=rcc && rcc<0.95
-                        "(#{rcc})" #"RCC = #{rcc};  Riesgo: Moderado"
+                        rcc #"RCC = #{rcc};  Riesgo: Moderado"
 
                         elsif 0.95<=rcc && rcc<1.01
-                        "(#{rcc})" #"RCC = #{rcc};  Riesgo: Alto"
+                        rcc #"RCC = #{rcc};  Riesgo: Alto"
 
                         elsif rcc>=1.01
-                        "(#{rcc})" #"RCC = #{rcc};  Riesgo: Muy alto"
+                        rcc #"RCC = #{rcc};  Riesgo: Muy alto"
                         end
                 elsif sexo == 0 #mujeres
 
                         if 0.72<=rcc && rcc<0.75
-                        "(#{rcc})"#"RCC = #{rcc};  Riesgo: Bajo"
+                        rcc#"RCC = #{rcc};  Riesgo: Bajo"
 
                         elsif 0.78<=rcc && rcc<0.82
-                        "(#{rcc})"#"RCC = #{rcc};  Riesgo: Moderado"
+                        rcc#"RCC = #{rcc};  Riesgo: Moderado"
 
                         elsif rcc>=0.82
-                        "(#{rcc})"#"RCC = #{rcc};  Riesgo: Alto"
+                        rcc#"RCC = #{rcc};  Riesgo: Alto"
                         end
                 end
         end
