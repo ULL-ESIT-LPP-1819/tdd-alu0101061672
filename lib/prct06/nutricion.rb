@@ -195,4 +195,11 @@ class Etiqueta
 
 	end
 
+        def <=>(other)
+
+                return self.nombreEtiqueta <=> other.nombreEtiqueta
+
+        end
+
+
 end

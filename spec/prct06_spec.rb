@@ -99,11 +99,36 @@ RSpec.describe Prct06 do
 
 describe "Comparable" do
 
-	it "Menor <" do 
+	it "Menor < (grasas)" do 
 	
-	expect(@et1.grasas < @et2.grasas).to eq(true)
-
+		expect(@et1.grasas < @et2.grasas).to eq(true)
+	
 	end
+
+        it "Menor < (nombreEtiqueta)" do
+
+        	expect(@et2.nombreEtiqueta < @et3.nombreEtiqueta).to eq(false)    
+
+        end
+
+        it "Mayor > " do
+
+                expect(@et1.grasas > @et2.grasas).to eq(false)
+
+        end
+
+        it "Igual == (grasas)" do
+
+                expect(@et1.grasas == @et2.grasas).to eq(false)
+
+        end
+
+        it "Igual == (nombreEtiqueta)" do
+
+                expect(@et3.grasas == @et4.grasas).to eq(false)
+
+        end
+
 
 
 end
