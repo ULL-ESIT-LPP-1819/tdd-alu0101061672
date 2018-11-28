@@ -1,5 +1,7 @@
 class DatosAntropometricos < Persona
 
+	include Enumerable
+
         attr_accessor :peso, :talla, :edad, :sexo, :circunferenciaCintura, :circunferenciaCadera
 
         def initialize (nombre,apellidos, direccion,telefono,peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
@@ -90,6 +92,18 @@ class DatosAntropometricos < Persona
 
                 "(#{media})"
         end
+
+        def each
+
+            actual = @head
+            while actual != nil do
+             yield actual.value
+             actual = actual.next
+            end
+
+        end
+
+
 
 end
 
