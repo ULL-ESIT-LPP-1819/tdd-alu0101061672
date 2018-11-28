@@ -175,5 +175,66 @@ describe "Comparable" do
         end
 
 end
+
+
+describe "Enumerable" do
+
+        it "collect" do
+                @lista.insert_end(@pa1)
+		@lista.insert_end(@pa2)
+
+                expect(@lista.collect{ "superHero" }).to eq(["superHero","superHero"])
+
+        end
+
+        it "select" do
+
+                @lista.insert_end(@pa1)
+                @lista.insert_end(@pa2)
+
+                expect(@lista.select {|v| v.IMC == 27.34 }).to eq([@pa1])
+
+        end
+
+        it "max" do
+
+                @lista.insert_end(@pa1)
+                @lista.insert_end(@pa2)
+
+                expect(@lista.max {|a,b| a.IMC <=> b.IMC } ).to eq(@pa2)
+                expect(@lista.max {|a,b| a.nombre <=> b.nombre } ).to eq(@pa2)
+
+
+        end
+	
+	        it "min" do
+
+                @lista.insert_end(@pa1)
+                @lista.insert_end(@pa2)
+
+                expect(@lista.min {|a,b| a.IMC <=> b.IMC } ).to eq(@pa1)
+                expect(@lista.min {|a,b| a.nombre <=> b.nombre } ).to eq(@pa1)
+                expect(@lista.min {|a,b| a.RCC <=> b.RCC } ).to eq(@pa1)
+
+
+        end
+
+        it "sort" do
+
+                @lista.insert_end(@pa1)
+                @lista.insert_end(@pa2)
+
+                expect(@lista.sort {|a,b| a.IMC <=> b.IMC } ).to eq([@pa1,@pa2])
+                expect(@lista.sort {|a,b| a.nombre <=> b.nombre } ).to eq([@pa1,@pa2])
+                expect(@lista.sort {|a,b| a.RCC <=> b.RCC } ).to eq([@pa2,@pa1])
+
+
+        end
+
+
+
+
+end
+
     
 end

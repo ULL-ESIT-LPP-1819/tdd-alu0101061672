@@ -108,6 +108,52 @@ describe "Enumerable" do
 
 	end
 
+	it "select" do 
+
+                @lista.insert_end(@et1)
+                @lista.insert_end(@et2)
+
+  		expect(@lista.select {|v| v.nombreEtiqueta == "Nutela"}).to eq([@et2])
+		
+	end
+
+	it "max" do 
+
+                @lista.insert_end(@et1)
+                @lista.insert_end(@et2)
+	
+		expect(@lista.max {|a,b| a.nombreEtiqueta <=> b.nombreEtiqueta } ).to eq(@et2)
+                expect(@lista.max {|a,b| a.grasas <=> b.grasas } ).to eq(@et2)
+		
+
+	end
+
+        it "min" do
+
+                @lista.insert_end(@et1)
+                @lista.insert_end(@et2)
+
+                expect(@lista.min {|a,b| a.nombreEtiqueta <=> b.nombreEtiqueta } ).to eq(@et1)
+                expect(@lista.min {|a,b| a.grasas <=> b.grasas } ).to eq(@et1)
+		expect(@lista.min {|a,b| a.grasasSaturadas <=> b.grasasSaturadas } ).to eq(@et2)
+
+
+        end
+
+        it "sort" do
+
+                @lista.insert_end(@et1)
+                @lista.insert_end(@et2)
+
+                expect(@lista.sort {|a,b| a.nombreEtiqueta <=> b.nombreEtiqueta } ).to eq([@et1,@et2])
+                expect(@lista.sort {|a,b| a.grasas <=> b.grasas } ).to eq([@et1,@et2])
+                expect(@lista.sort {|a,b| a.grasasSaturadas <=> b.grasasSaturadas } ).to eq([@et2,@et1])
+
+
+        end
+
+
+
 
 end
 end
