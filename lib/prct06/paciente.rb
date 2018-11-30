@@ -1,21 +1,32 @@
+# @author Sonia Díaz Santos 
 class DatosAntropometricos < Persona
-
+# Incluye el módulo Enumerable
 	include Enumerable
-
+# Se realiza para poder acceder a los atributos y cambiarlos    
         attr_accessor :peso, :talla, :edad, :sexo, :circunferenciaCintura, :circunferenciaCadera
-
+# Método para inicializar las variables que llama al initialize de la clase padre(Persona) 
         def initialize (nombre,apellidos, direccion,telefono,peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
 		super(nombre,apellidos,edad,sexo,direccion,telefono)
                 @peso, @talla, @circunferenciaCintura, @circunferenciaCadera = peso,talla, circunferenciaCintura, circunferenciaCadera
 
         end
 
+# Método to_s para imprimir los objetos de la clase
+#
+# == Returns:
+# Devuelve un string como representación de los objetos de la clase hija más los objetos del to_s de la clase padre(Persona)
+#
         def to_s
 		
 		super().to_s +
 		",#{@peso},#{@talla},#{@edad},#{@sexo},#{@circunferenciaCintura},#{@circunferenciaCadera}"
         end
 
+# Método para calcular el Índice de Masa Corporal
+#
+# == Returns:
+# Devuelve el valor del imc del individuo teniendo en cuenta su peso y talla
+#
         def IMC
 
                 imc = (peso/(talla*talla)).round(2)
@@ -41,6 +52,11 @@ class DatosAntropometricos < Persona
 
         end
 
+# Método para calcular el porcentaje de grasa
+#
+# == Returns:
+# Devuelve el porcentaje de la grasa de un individuo teniendo en cuenta su imc
+#
         def porcentajeGrasa
                 imc = (peso/(talla*talla)).round(2)
                 porcentajeGrasa = (1.2 * imc + 0.23 * @edad - 10.8 * @sexo - 5.4).round(2)
@@ -48,6 +64,11 @@ class DatosAntropometricos < Persona
                 return "(#{porcentajeGrasa})"
         end
 
+# Método para calcular la Relación Cintura Cadera
+#
+# == Returns:
+# Devuelve el valor del rcc del individuo. Tiene en cuenta el sexo de la persona
+#
         def RCC
 
                 rcc = circunferenciaCintura.to_f/circunferenciaCadera.to_f
@@ -80,6 +101,15 @@ class DatosAntropometricos < Persona
                 end
         end
 
+# Método para calcular los pliegues cutáneos(valoran la cantidad de tejido adiposo subcutáneo)
+#
+# == Parameters:
+# pliegues
+#  Es un pliegue(tricipital,bicipital,subescapular o suprailíaco) que contiene tres valores
+#
+# == Returns:
+# Devuelve una cadena con el valor de la media de los tres valores del pliegue 
+#
         def pliegue (pliegues)
 
                 media = 0
@@ -93,6 +123,8 @@ class DatosAntropometricos < Persona
                 "(#{media})"
         end
 
+# Método para utilizar el módulo Enumerable que proporciona una forma de recorrer cada uno de los elementos en el orden correspondiente 
+#
         def each
 
             actual = @head
