@@ -11,7 +11,7 @@ class Persona
 		@edad,@sexo, @direccion,@telefono = edad, sexo, direccion,telefono
 	
 	end
-
+#
 # Método to_s para imprimir los objetos de la clase
 #
 # == Returns:
