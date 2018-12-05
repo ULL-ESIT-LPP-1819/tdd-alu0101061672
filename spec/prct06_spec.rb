@@ -132,13 +132,13 @@ describe "Comparable" do
 
         it "Mayor o igual >= " do
 
-                expect(@et1.grasas == @et2.grasas).to eq(false)
+                expect(@et1.grasas >= @et2.grasas).to eq(false)
 
         end
 
         it "Menor o igual <= " do
 
-                expect(@et1.grasas == @et2.grasas).to eq(false)
+                expect(@et1.grasas <= @et2.grasas).to eq(true)
 
         end
 
