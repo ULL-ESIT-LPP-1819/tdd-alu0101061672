@@ -123,18 +123,6 @@ class DatosAntropometricos < Persona
                 "(#{media})"
         end
 
-# Método para utilizar el módulo Enumerable que proporciona una forma de recorrer cada uno de los elementos en el orden correspondiente 
-#
-        def each
-
-            actual = @head
-            while actual != nil do
-             yield actual.value
-             actual = actual.next
-            end
-
-        end
-
 
 
 end
