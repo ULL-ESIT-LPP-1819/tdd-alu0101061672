@@ -159,13 +159,13 @@ describe "Comparable" do
 
         it "Mayor o igual >= " do
 
-                expect(@pa1.IMC == @pa2.IMC).to eq(false)
+                expect(@pa1.IMC >= @pa2.IMC).to eq(true)
 
         end
 
         it "Menor o igual <= " do
 
-                expect(@pa1.IMC == @pa2.IMC).to eq(false)
+                expect(@pa1.IMC <= @pa2.IMC).to eq(false)
 
         end
 
