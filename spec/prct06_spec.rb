@@ -17,6 +17,18 @@ RSpec.describe Prct06 do
                 @et3 = Etiqueta.new('Chuleta', 12, 6.54, 6.07, 1.09, 0.8, 0, 0, 0, 0, 19.1, 7, 0.5, 0)
                 @et4 = Etiqueta.new('Aceite',92, 14, 69, 9.2, 0, 0, 0, 0, 2.9, 0, 8, 0,0)
                 @et5 = Etiqueta.new('Colacao0%', 5.8, 3, 2, 0.8, 40, 5, 0,0, 22, 9.2, 0.04, 0,0)
+	
+		@menu1= List.new
+		@menu2= List.new
+		@menu3= List.new
+		@menu4= List.new
+		@menu5= List.new
+
+                @pa1 = DatosAntropometricos.new(0.12,"Sonia", "Díaz Santos", "Candelaria", "666666666", 70,1.6,22, 0, 81,90)
+                @pa2 = DatosAntropometricos.new(0.27,"Miriam", "Rodríguez", "Orotava", "999999999", 40,1.5,23, 0, 70,100)
+                @pa3 = DatosAntropometricos.new(0.0,"Jorge", "González", "Orotava", "444444444", 70,1.87,20, 1, 90, 100)
+                @pa4 = DatosAntropometricos.new(0.0,"Alejandro", "González", "Icod", "333333333", 160,1.9,20, 1, 81,90)
+                @pa5 = DatosAntropometricos.new(0.54,"Marta", "García", "San Miguel", "222222222", 56,1.67,20, 0, 70,95)
 
         end
 
@@ -148,7 +160,88 @@ describe "Comparable" do
 
         end
 
-
-
 end
+
+describe "Métodos menú"  do
+
+
+        it "collect" do
+
+                @menu1.insert_end(@et1)
+                @menu1.insert_end(@et2)
+                @menu1.insert_end(@et5)
+
+                expect(@menu1.collect{ "Etiquetas" }).to eq(["Etiquetas","Etiquetas","Etiquetas"])
+
+        end
+
+        it "zip" do
+
+                @menu1.insert_end(@et1)
+                @menu1.insert_end(@et2)
+
+                @menu2.insert_end(@et3)
+                @menu2.insert_end(@et4)
+
+                expect(@menu1.zip(@menu2)).to eq([[@et1,@et3],[@et2,@et4]])
+
+        end
+ 
+
+ 
+        it "inject" do
+
+                @menu1.insert_end(@et1)
+                @menu1.insert_end(@et2)
+                @menu1.insert_end(@et3)
+                @menu1.insert_end(@et4)
+                @menu1.insert_end(@et5)
+
+                expect(@menu1.inject(0) {|sum,n| (sum + n.factor_conversionKcal).round(2)}).to eq(4486.52)
+
+        end
+
+        it "reduce" do
+
+                @menu1.insert_end(@et1)
+                @menu1.insert_end(@et2)
+                @menu1.insert_end(@et3)
+                @menu1.insert_end(@et4)
+                @menu1.insert_end(@et5)
+
+                expect(@menu1.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) } ).to eq(4486.52)
+
+        end
+	
+	it "Viendo si eres un gordo" do
+
+                @menu1.insert_end(@et1)
+                @menu1.insert_end(@et2)
+                @menu1.insert_end(@et3)
+
+                @menu2.insert_end(@et4)
+                @menu2.insert_end(@et5)
+                @menu2.insert_end(@et1)
+
+                @menu3.insert_end(@et3)
+                @menu3.insert_end(@et4)
+
+                @menu4.insert_end(@et4)
+                @menu4.insert_end(@et5)
+                @menu4.insert_end(@et1)
+                @menu4.insert_end(@et2)
+                @menu4.insert_end(@et3)
+
+                @menu5.insert_end(@et4)
+                @menu5.insert_end(@et5)
+
+		
+		
+
+
+	end
+end
+
+
+
 end

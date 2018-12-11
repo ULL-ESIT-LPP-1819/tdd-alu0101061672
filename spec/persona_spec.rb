@@ -1,3 +1,4 @@
+
 RSpec.describe Persona do
 	
 
@@ -5,13 +6,15 @@ RSpec.describe Persona do
 		
 		@pe1 = Persona.new("Sonia","Díaz Santos", 22,0, "Candelaria", "666666666");
 		@pe2 = Persona.new("Miriam","Rodríguez Méndez", 23,0,"La Orotava", "999999999");
-		@pa1 = DatosAntropometricos.new("Sonia", "Díaz Santos", "Candelaria", "666666666", 70,1.6,22, 0, 81,90)		
-                @pa2 = DatosAntropometricos.new("Miriam", "Rodríguez", "Orotava", "999999999", 40,1.5,23, 0, 70,100)
-                @pa3 = DatosAntropometricos.new("Jorge", "González", "Orotava", "444444444", 70,1.87,20, 1, 90, 100)
-                @pa4 = DatosAntropometricos.new("Alejandro", "González", "Icod", "333333333", 160,1.9,20, 1, 81,90)
-                @pa5 = DatosAntropometricos.new("Marta", "García", "San Miguel", "222222222", 56,1.67,20, 0, 70,95)
+		@pa1 = DatosAntropometricos.new(0.12,"Sonia", "Díaz Santos", "Candelaria", "666666666", 70,1.6,22, 0, 81,90)		
+                @pa2 = DatosAntropometricos.new(0.27,"Miriam", "Rodríguez", "Orotava", "999999999", 40,1.5,23, 0, 70,100)
+                @pa3 = DatosAntropometricos.new(0.0,"Jorge", "González", "Orotava", "444444444", 70,1.87,20, 1, 90, 100)
+                @pa4 = DatosAntropometricos.new(0.0,"Alejandro", "González", "Icod", "333333333", 160,1.9,20, 1, 81,90)
+                @pa5 = DatosAntropometricos.new(0.54,"Marta", "García", "San Miguel", "222222222", 56,1.67,20, 0, 70,95)
 		
 		@lista = List.new
+		
+
 	end
 	
 	it "Comprobando el almacenamiento de datos" do
@@ -235,6 +238,4 @@ describe "Enumerable" do
 
 
 end
-
-    
 end
