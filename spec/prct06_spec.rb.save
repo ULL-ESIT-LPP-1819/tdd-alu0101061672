@@ -24,7 +24,7 @@ RSpec.describe Prct06 do
 		@menu4= List.new
 		@menu5= List.new
 
-                @pa1 = DatosAntropometricos.new(0.12,"Sonia", "Díaz Santos", "Candelaria", "666666666", 70,160,22, 0, 81,90)
+                @pa1 = DatosAntropometricos.new(0.12,"Sonia", "Díaz Santos", "Candelaria", "666666666", 70,1.6,22, 0, 81,90)
                 @pa2 = DatosAntropometricos.new(0.27,"Miriam", "Rodríguez", "Orotava", "999999999", 40,1.5,23, 0, 70,100)
                 @pa3 = DatosAntropometricos.new(0.0,"Jorge", "González", "Orotava", "444444444", 70,1.87,20, 1, 90, 100)
                 @pa4 = DatosAntropometricos.new(0.0,"Alejandro", "González", "Icod", "333333333", 160,1.9,20, 1, 81,90)
@@ -235,24 +235,10 @@ describe "Métodos menú"  do
                 @menu5.insert_end(@et4)
                 @menu5.insert_end(@et5)
 
-		#menu1  pa1
-
-		expect(@menu1.get_value.factor_conversionKcal).to eq(905.62)
-		expect(@menu1.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) } ).to eq(2409.48)
-		expect((@pa1.gasto_energetico_total).round(2)).to eq(1743.38)
-                #10% de margen de error
-
-		gastototal= (@pa1.gasto_energetico_total)
-		kcalmenu1 = @menu1.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) } 
-		percenttop=(kcalmenu1*0.9).round(2)
-		percentbottom=(kcalmenu1*1.1).round(2)               
-        
-                expect((kcalmenu1*0.9).round(2)).to eq(2168.53)
-
-	        expect(gastototal.between?(percenttop,percentbottom)).to eq(false)
-
-		#menu2 pa2
+		|
 		
+
+
 	end
 end
 
