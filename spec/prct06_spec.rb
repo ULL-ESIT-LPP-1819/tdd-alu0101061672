@@ -25,10 +25,10 @@ RSpec.describe Prct06 do
 		@menu5= List.new
 
                 @pa1 = DatosAntropometricos.new(0.12,"Sonia", "Díaz Santos", "Candelaria", "666666666", 70,160,22, 0, 81,90)
-                @pa2 = DatosAntropometricos.new(0.27,"Miriam", "Rodríguez", "Orotava", "999999999", 40,1.5,23, 0, 70,100)
-                @pa3 = DatosAntropometricos.new(0.0,"Jorge", "González", "Orotava", "444444444", 70,1.87,20, 1, 90, 100)
-                @pa4 = DatosAntropometricos.new(0.0,"Alejandro", "González", "Icod", "333333333", 160,1.9,20, 1, 81,90)
-                @pa5 = DatosAntropometricos.new(0.54,"Marta", "García", "San Miguel", "222222222", 56,1.67,20, 0, 70,95)
+                @pa2 = DatosAntropometricos.new(0.27,"Miriam", "Rodríguez", "Orotava", "999999999", 40,150,23, 0, 70,100)
+                @pa3 = DatosAntropometricos.new(0.0,"Jorge", "González", "Orotava", "444444444", 70,187,20, 1, 90, 100)
+                @pa4 = DatosAntropometricos.new(0.0,"Alejandro", "González", "Icod", "333333333", 160,190,20, 1, 81,90)
+                @pa5 = DatosAntropometricos.new(0.54,"Marta", "García", "San Miguel", "222222222", 56,167,20, 0, 70,95)
 
         end
 
@@ -253,6 +253,41 @@ describe "Métodos menú"  do
 
 		#menu2 pa2
 		
+                gastototal2= (@pa2.gasto_energetico_total)
+                kcalmenu2 = @menu2.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) }
+                percenttop2=(kcalmenu2*0.9).round(2)
+                percentbottom2=(kcalmenu2*1.1).round(2)
+
+                expect(gastototal2.between?(percenttop2,percentbottom2)).to eq(false)
+
+		#menu3 pa3
+
+                gastototal3= (@pa3.gasto_energetico_total)
+                kcalmenu3 = @menu3.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) }
+                percenttop3=(kcalmenu3*0.9).round(2)
+                percentbottom3=(kcalmenu3*1.1).round(2)
+
+                expect(gastototal3.between?(percenttop3,percentbottom3)).to eq(true)
+
+		#menu4 pa4
+
+                gastototal4= (@pa4.gasto_energetico_total)
+                kcalmenu4 = @menu4.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) }
+                percenttop4=(kcalmenu4*0.9).round(2)
+                percentbottom4=(kcalmenu4*1.1).round(2)
+
+                expect(gastototal4.between?(percenttop4,percentbottom4)).to eq(false)
+	
+		#menu5 pa5
+
+                gastototal5= (@pa5.gasto_energetico_total)
+                kcalmenu5 = @menu5.reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) }
+                percenttop5=(kcalmenu5*0.9).round(2)
+                percentbottom5=(kcalmenu5*1.1).round(2)
+
+                expect(gastototal5.between?(percenttop5,percentbottom5)).to eq(true)
+
+
 	end
 end
 
