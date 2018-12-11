@@ -3,11 +3,11 @@ class DatosAntropometricos < Persona
 # Incluye el módulo Enumerable
 	include Enumerable
 # Se realiza para poder acceder a los atributos y cambiarlos    
-        attr_accessor :peso, :talla, :edad, :sexo, :circunferenciaCintura, :circunferenciaCadera
+        attr_accessor :factor_actividad_fisica, :peso, :talla, :edad, :sexo, :circunferenciaCintura, :circunferenciaCadera
 # Método para inicializar las variables que llama al initialize de la clase padre(Persona) 
-        def initialize (nombre,apellidos, direccion,telefono,peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
+        def initialize (factor_actividad_fisica,nombre,apellidos, direccion,telefono,peso,talla,edad,sexo, circunferenciaCintura, circunferenciaCadera)
 		super(nombre,apellidos,edad,sexo,direccion,telefono)
-                @peso, @talla, @circunferenciaCintura, @circunferenciaCadera = peso,talla, circunferenciaCintura, circunferenciaCadera
+                @factor_actividad_fisica,@peso, @talla, @circunferenciaCintura, @circunferenciaCadera = factor_actividad_fisica, peso,talla, circunferenciaCintura, circunferenciaCadera
 
         end
 
@@ -135,9 +135,45 @@ class DatosAntropometricos < Persona
 
         end
 
+	
+	def peso_teorico_ideal
 
+		return ((@talla -150)*0.75+50)
+
+	end
+
+	def gasto_energetico_basal
+
+		if(sexo == 0)
+
+			return ((10*@peso)+(6.25*@talla)-(5*@edad)-161)
+
+		elsif (sexo == 1)
+
+			return ((10*@peso)+(6.25*@talla)-(5*@edad)+5)
+		end
+	end
+
+	def efecto_termogeno
+
+		return (gasto_energetico_basal*0.10)
+
+	end
+
+	def gasto_actividad_fisica
+
+		return (gasto_energetico_basal * @factor_actividad_fisica)
+
+	end
+
+	def gasto_energetico_total
+
+		return (gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica)
+
+	end
 
 end
+
 
 
 
