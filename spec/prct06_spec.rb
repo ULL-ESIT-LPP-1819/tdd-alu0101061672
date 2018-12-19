@@ -331,24 +331,30 @@ describe "Práctica 11"  do
 		expect(@menu7).to eq(1516.4)
 		expect(@vector_menus.buclefor).to eq([718.34, 1271.06, 1516.4, 1869.3, 2056.58, 2064.5, 2617.22, 2862.56, 2862.56, 2970.12])
 		expect(@vector_menus.caso_each).to eq([718.34, 1271.06, 1516.4, 1869.3, 2056.58, 2064.5, 2617.22, 2862.56, 2862.56, 2970.12])
-	
+		expect(@vector_menus.sort { |a,b| a <=> b }).to eq([718.34, 1271.06, 1516.4, 1869.3, 2056.58, 2064.5, 2617.22, 2862.56, 2862.56, 2970.12])
+		
+
 	end
 
         it "Lista de 10 pacientes" do
 		
 		@listapa= List.new
-		@listapa.insert_end(@pa1)
-                @listapa.insert_end(@pa2)
-                @listapa.insert_end(@pa3)
-                @listapa.insert_end(@pa4)
-                @listapa.insert_end(@pa5)
-                @listapa.insert_end(@pa6)
-                @listapa.insert_end(@pa7)
-                @listapa.insert_end(@pa8)
-                @listapa.insert_end(@pa9)
-                @listapa.insert_end(@pa10)
-
+		@listapa.insert_end(@pa1.gasto_energetico_total)
+                @listapa.insert_end(@pa2.gasto_energetico_total)
+                @listapa.insert_end(@pa3.gasto_energetico_total)
+                @listapa.insert_end(@pa4.gasto_energetico_total)
+                @listapa.insert_end(@pa5.gasto_energetico_total)
+                @listapa.insert_end(@pa6.gasto_energetico_total)
+                @listapa.insert_end(@pa7.gasto_energetico_total)
+                @listapa.insert_end(@pa8.gasto_energetico_total)
+                @listapa.insert_end(@pa9.gasto_energetico_total)
+                @listapa.insert_end(@pa10.gasto_energetico_total)
 		
+               
+		expect(@listapa.convertir_array_for).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
+                expect(@listapa.convertir_array_each).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
+                expect(@listapa.sort { |a,b| a <=> b }).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
+
 
 
 
