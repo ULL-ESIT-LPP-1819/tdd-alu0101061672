@@ -160,5 +160,31 @@ class List
 
 	end		
 
+	def convertir_array_for
+		
+		dar_array= []
+		actual = @head
+		for i in self do
+			
+			dar_array.push(actual.value)
+			actual = actual.next				
+		end
+		dar_array.buclefor
+
+	end	
+
+        def convertir_array_each
+
+                dar_array= []
+                actual = @head
+                for i in self do
+
+                        dar_array.push(actual.value)
+                        actual = actual.next
+                end
+                dar_array.caso_each
+
+        end
+
 
 end
