@@ -359,5 +359,17 @@ class Etiqueta
 
         end
 
+        def <=>(other)
+
+                return self.factor_conversionKcal <=> other.factor_conversionKcal
+
+        end
+
+	
+	def +(other)
+
+		return self.factor_conversionKcal + other.factor_conversionKcal	
+
+	end
 
 end

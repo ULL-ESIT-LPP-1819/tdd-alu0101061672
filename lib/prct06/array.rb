@@ -1,20 +1,19 @@
 class Array
-include Comparable
-	def buclefor
-	
-		aux = []	
-	
-		for i in(1..(self.length))
-						
-			if(self[i].factor_conversionKcal > self[i+1].factor_conversionKcal)
-				aux = self[i]
-				self[i] = self[i+1]
-				self[i+1] = aux
 
-			end
-		end
-		
-	        self
+	def buclefor
+
+          swapped = true
+            for i in 0 ...(self.length-1)
+            swapped = false
+              for j in 0 ... (self.length-i-1)
+                if self[j] > self[j+1]
+                  self[j] , self[j+1] = self[j+1], self[j]
+                  swapped = true
+                end
+              end
+            break if swapped == false
+            end		
+	    self
 
 	end
 
