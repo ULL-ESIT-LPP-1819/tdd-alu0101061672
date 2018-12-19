@@ -23,14 +23,25 @@ RSpec.describe Prct06 do
 		@menu3= List.new
 		@menu4= List.new
 		@menu5= List.new
+                @menu6= Array.new
+                @menu7= Array.new
+                @menu8= Array.new
+                @menu9= Array.new
+                @menu10= Array.new
 
                 @pa1 = DatosAntropometricos.new(0.12,"Sonia", "Díaz Santos", "Candelaria", "666666666", 70,160,22, 0, 81,90)
                 @pa2 = DatosAntropometricos.new(0.27,"Miriam", "Rodríguez", "Orotava", "999999999", 40,150,23, 0, 70,100)
                 @pa3 = DatosAntropometricos.new(0.0,"Jorge", "González", "Orotava", "444444444", 70,187,20, 1, 90, 100)
                 @pa4 = DatosAntropometricos.new(0.0,"Alejandro", "González", "Icod", "333333333", 160,190,20, 1, 81,90)
                 @pa5 = DatosAntropometricos.new(0.54,"Marta", "García", "San Miguel", "222222222", 56,167,20, 0, 70,95)
+                @pa6 = DatosAntropometricos.new(0.12,"Pepito", "Díaz Santos", "Candelaria", "666666666", 90,190,18, 0, 81,90)
+                @pa7 = DatosAntropometricos.new(0.27,"Maria", "Rodríguez", "Orotava", "999999999", 60,140,23, 0, 70,100)
+                @pa8 = DatosAntropometricos.new(0.0,"Ginny", "González", "Orotava", "444444444", 90,177,20, 1, 90, 100)
+                @pa9 = DatosAntropometricos.new(0.0,"Alberto", "González", "Icod", "333333333", 50,190,19, 1, 81,90)
+                @pa10 = DatosAntropometricos.new(0.54,"Murtap", "García", "San Miguel", "222222222", 89,150,21, 0, 70,95)
 
-        end
+
+            end
 
 
 	let(:alimentosEnvasados){Etiqueta.new('Chocolate', 29, 15.1, 8.1, 0.7, 47, 50.1, 0, 3.1, 5.9, 4.2, 0.02, 3, 6)}
@@ -215,6 +226,7 @@ describe "Métodos menú"  do
 	
 	it "Viendo si eres un gordo" do
 
+
                 @menu1.insert_end(@et1)
                 @menu1.insert_end(@et2)
                 @menu1.insert_end(@et3)
@@ -234,6 +246,7 @@ describe "Métodos menú"  do
 
                 @menu5.insert_end(@et4)
                 @menu5.insert_end(@et5)
+
 
 		#menu1  pa1
 
@@ -292,5 +305,46 @@ describe "Métodos menú"  do
 end
 
 
+describe "Práctica 11"  do
+
+
+        it "Array de 10 menús" do
+		
+		@menu6.push(@et1)
+		@menu7.push(@et2)
+                @menu8.push(@et3)
+                @menu9.push(@et4)
+                @menu10.push(@et5)
+
+		@vector_menus = Array.new
+		@vector_menus = [@menu6,@menu7,@menu8,@menu9,@menu10]
+	        expect(@vector_menus).to eq([@menu6,@menu7,@menu8,@menu9,@menu10])
+
+		expect(@vector_menus.buclefor).to eq([@menu6,@menu7,@menu8,@menu9,@menu10])
+	
+	end
+
+        it "Lista de 10 pacientes" do
+		
+		@listapa= List.new
+		@listapa.insert_end(@pa1)
+                @listapa.insert_end(@pa2)
+                @listapa.insert_end(@pa3)
+                @listapa.insert_end(@pa4)
+                @listapa.insert_end(@pa5)
+                @listapa.insert_end(@pa6)
+                @listapa.insert_end(@pa7)
+                @listapa.insert_end(@pa8)
+                @listapa.insert_end(@pa9)
+                @listapa.insert_end(@pa10)
+
+		
+
+
+
+        end
+
+
+end
 
 end
