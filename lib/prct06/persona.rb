@@ -37,5 +37,16 @@ class Persona
 
         end
 
+        def <=>(other)
+
+                return self.IMC <=> other.IMC
+
+        end
+
+        def <=>(other)
+      
+                return self.gasto_energetico_total <=> other.gasto_energetico_total
+
+        end
 
 end

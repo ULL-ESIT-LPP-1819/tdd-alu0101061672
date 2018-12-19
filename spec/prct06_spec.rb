@@ -1,3 +1,5 @@
+require 'benchmark'
+
 RSpec.describe Prct06 do
   it "has a version number" do
     expect(Prct06::VERSION).not_to be nil
@@ -333,6 +335,13 @@ describe "Práctica 11"  do
 		expect(@vector_menus.caso_each).to eq([718.34, 1271.06, 1516.4, 1869.3, 2056.58, 2064.5, 2617.22, 2862.56, 2862.56, 2970.12])
 		expect(@vector_menus.sort { |a,b| a <=> b }).to eq([718.34, 1271.06, 1516.4, 1869.3, 2056.58, 2064.5, 2617.22, 2862.56, 2862.56, 2970.12])
 		
+                n = 50000
+
+                Benchmark.bm do |x|
+                x.report("for array:") {n.times do @vector_menus.buclefor; end}
+                x.report("each array:"){n.times do @vector_menus.caso_each; end}
+                x.report("sort array:"){n.times do @vector_menus.sort { |a,b| a <=> b } ; end}
+		end
 
 	end
 
@@ -355,9 +364,13 @@ describe "Práctica 11"  do
                 expect(@listapa.convertir_array_each).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
                 expect(@listapa.sort { |a,b| a <=> b }).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
 
+                n = 50000
 
-
-
+        	Benchmark.bm do |x|
+        	x.report("for lista:") {n.times do @listapa.convertir_array_for; end}
+        	x.report("each lista:"){n.times do @listapa.convertir_array_each; end}
+	        x.report("sort lista:"){n.times do @listapa.sort { |a,b| a <=> b } ; end}
+		end
         end
 
 
