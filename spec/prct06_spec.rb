@@ -317,10 +317,19 @@ describe "Práctica 11"  do
                 @menu9=[@et4,@et2].reduce('+')
                 @menu10=[@et5,@et3].reduce('+').round(2)	
 
-		@vector_menus =[@menu6,@menu7,@menu8,@menu9,@menu10]
-		expect(@vector_menus).to eq([2617.22, 1516.4, 2970.12, 2862.56, 718.34])
+                @menu11=[@et3,@et4].reduce('+')
+                @menu12=[@et2,@et1].reduce('+')
+                @menu13=[@et5,@et2,@et3].reduce(0) {|sum, num| (sum + num.factor_conversionKcal).round(2) }
+
+                @menu14=[@et2,@et4].reduce('+')
+                @menu15=[@et5,@et1].reduce('+').round(2)
+
+
+
+		@vector_menus =[@menu6,@menu7,@menu8,@menu9,@menu10,@menu11,@menu12,@menu13,@menu14,@menu15]
+		expect(@vector_menus).to eq([2617.22, 1516.4, 2970.12, 2862.56, 718.34, 2064.5, 2056.58, 1869.3, 2862.56, 1271.06])
 		expect(@menu7).to eq(1516.4)
-		expect(@vector_menus.buclefor).to eq([718.34, 1516.4, 2617.22, 2862.56, 2970.12])
+		expect(@vector_menus.buclefor).to eq([718.34, 1271.06, 1516.4, 1869.3, 2056.58, 2064.5, 2617.22, 2862.56, 2862.56, 2970.12])
 	
 	end
 
