@@ -348,22 +348,33 @@ describe "Práctica 11"  do
         it "Lista de 10 pacientes" do
 		
 		@listapa= List.new
-		@listapa.insert_end(@pa1.gasto_energetico_total)
-                @listapa.insert_end(@pa2.gasto_energetico_total)
-                @listapa.insert_end(@pa3.gasto_energetico_total)
-                @listapa.insert_end(@pa4.gasto_energetico_total)
-                @listapa.insert_end(@pa5.gasto_energetico_total)
-                @listapa.insert_end(@pa6.gasto_energetico_total)
-                @listapa.insert_end(@pa7.gasto_energetico_total)
-                @listapa.insert_end(@pa8.gasto_energetico_total)
-                @listapa.insert_end(@pa9.gasto_energetico_total)
-                @listapa.insert_end(@pa10.gasto_energetico_total)
-		
-               
-		expect(@listapa.convertir_array_for).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
-                expect(@listapa.convertir_array_each).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
-                expect(@listapa.sort { |a,b| a <=> b }).to eq([1454.255, 1642.63, 1743.38, 1757.25, 1951.125, 2102.375, 2202.11, 2240.53, 2560.86, 2961.75])
+		@listapa.insert_end(@pa1)
+                @listapa.insert_end(@pa2)
+                @listapa.insert_end(@pa3)
+                @listapa.insert_end(@pa4)
+                @listapa.insert_end(@pa5)
+                @listapa.insert_end(@pa6)
+                @listapa.insert_end(@pa7)
+                @listapa.insert_end(@pa8)
+                @listapa.insert_end(@pa9)
+                @listapa.insert_end(@pa10)
+			
+		expect(@pa1.gasto_energetico_total).to eq(1743.38)		
+                expect(@pa2.gasto_energetico_total).to eq(1454.255)
+                expect(@pa3.gasto_energetico_total).to eq(1951.125)
+                expect(@pa4.gasto_energetico_total).to eq(2961.75)
+                expect(@pa5.gasto_energetico_total).to eq(2202.11)
+                expect(@pa6.gasto_energetico_total).to eq(2240.53)
+                expect(@pa7.gasto_energetico_total).to eq(1642.63)
+                expect(@pa8.gasto_energetico_total).to eq(2102.375)
+                expect(@pa9.gasto_energetico_total).to eq(1757.25)
+                expect(@pa10.gasto_energetico_total).to eq(2560.86)
 
+
+                expect(@listapa.convertir_array_for).to eq([@pa2,@pa7,@pa1,@pa9,@pa3,@pa8,@pa5,@pa6,@pa10,@pa4])
+                expect(@listapa.convertir_array_each).to eq([@pa2,@pa7,@pa1,@pa9,@pa3,@pa8,@pa5,@pa6,@pa10,@pa4])
+                expect(@listapa.sort { |a,b| a <=> b }).to eq([@pa2,@pa7,@pa1,@pa9,@pa3,@pa8,@pa5,@pa6,@pa10,@pa4])
+         
                 n = 50000
 
         	Benchmark.bm do |x|
@@ -377,3 +388,4 @@ describe "Práctica 11"  do
 end
 
 end
+
