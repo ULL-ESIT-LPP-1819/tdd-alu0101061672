@@ -180,19 +180,8 @@ class Menu
     end
     
     output << "Valor energético total  #{(vet).round(2)}" 
-
-    #output << valor_energetico(@desayuno)
-    #@almuerzo.each_with_index do |lunch,index|
-    #  output << "#{index + 1}) #{lunch}  "
-    #end
-    #output << valor_energetico(@almuerzo)
-    #@cena.each_with_index do |dinner,index|
-    #  output << "#{index + 1}) #{dinner}  "
-    #end
-   # output << valor_energetico(@cena)
-    #output << "\n"
-    #output << "Valor energético total  #valor_energetico(@desayuno)+valor_energetico(@almuerzo)+valor_energetico(@cena)"
     output
+
   end
 
 
