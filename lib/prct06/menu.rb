@@ -142,7 +142,6 @@ class Menu
       output << "#{breakfast[:proteinas]}      "
       output << "#{breakfast[:fibra]}  "
       output << "#{breakfast[:sal]}      "
-      #vet = valor_energetico(breakfast)
       output << "#{valor_energetico(breakfast)}"
       output << "\n"
 
@@ -157,7 +156,6 @@ class Menu
       output << "#{lunch[:proteinas]}      "
       output << "#{lunch[:fibra]}  "
       output << "#{lunch[:sal]}      "
-      #vet += valor_energetico(lunch)
       output << "#{valor_energetico(lunch)}"
       output << "\n"
 
@@ -173,7 +171,6 @@ class Menu
       output << "#{dinner[:proteinas]}     "
       output << "#{dinner[:fibra]}  "
       output << "#{dinner[:sal]}      "
-     # vet += valor_energetico(dinner)
       output << "#{valor_energetico(dinner)}"
       output << "\n"
 
