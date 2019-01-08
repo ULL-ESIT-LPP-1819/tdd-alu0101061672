@@ -387,5 +387,66 @@ describe "Práctica 11"  do
 
 end
 
+describe "menu" do
+
+	it "menus" do
+
+	menu = Menu.new("Lunes") do
+	titulo "Bajo en calorías"
+	ingesta  :min => 30, :max => 35 
+	desayuno :descripcion => "Pan integral",
+		 :porcion => "1 rodaja",
+		 :gramos => 100,
+		 :grasas => 3.3,
+		 :carbohidratos => 54.0,
+		 :proteinas => 11.0,
+		 :fibra => 2.3,
+		 :sal => 0.06
+	desayuno :descripcion => "Actimel",
+		 :porcion => "1 porci´on",
+		 :gramos => 100,
+		 :grasas => 3.4,
+		 :carbohidratos => 4.4,
+		 :proteinas => 3.6,
+		 :sal => 0.05
+	almuerzo :descripcion => "Arroz",
+		 :porcion => "1 taza",
+		 :gramos => 100,
+		 :grasas => 0.9,
+		 :carbohidratos => 81.6,
+		 :proteinas => 6.67,
+		 :fibra => 1.4,
+		 :sal => 0.04
+	almuerzo :descripcion => "Lentejas",
+		 :porcion => "1/2 cuchar´on",
+		 :grasas => 0.4,
+		 :carbohidratos => 20.0,
+		 :proteinas => 9.0,
+		 :fibra => 8.0,
+		 :sal => 0.02
+	almuerzo :descripcion => "Naranja",
+		 :porcion => "1 pieza",
+		 :gramos => 100,
+		 :grasas => 0.12,
+		 :carbohidratos => 11.75,
+		 :proteinas => 0.94,
+		 :fibra => 2.4
+	cena :descripcion => "Leche entera hacendado",
+	     :porcion => "1 vaso",
+	     :gramos => 100,
+	     :grasas => 3.6,
+	     :carbohidratos => 4.6,
+	     :proteinas => 3.1,
+	     :sal => 0.13
+
+
+	end
+
+	expect(menu.to_s).to eq("Lunes             Composición nutricional\n=======================================\n                        grasas  carbohidratos  proteínas  fibra  sal   valor energetico\nDesayuno\nPan integral              3.3        54.0         11.0      2.3  0.06      289.7\nActimel              3.4        4.4         3.6      0.0  0.05      62.6\nAlmuerzo\nArroz                  0.9        81.6         6.67      1.4  0.04      361.18\nLentejas                  0.4        20.0         9.0      8.0  0.02      119.6\nNaranja                  0.12        11.75         0.94      2.4  0.0      51.84\nCena\nLeche entera hacendado    3.6        4.6         3.1     0.0  0.13      63.2\nValor energético total  948.12")
+
+end
+
+end
+
 end
 
